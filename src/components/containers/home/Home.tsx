@@ -19,12 +19,17 @@ const ContainerHome: FC = () => {
     setIsExpanded(!isExpanded);
   };
   const handleShowChat = () => {
-    setShowChat(showChat);
+    if (setShowChat) {
+      setShowChat(!showChat);
+      setShowTask(false);
+    }
   };
   const handleShowTask = () => {
-    setShowTask(showTask);
+    if (setShowTask) {
+      setShowTask(!showTask);
+      setShowChat(false);
+    }
   };
-
   return (
     <section className="max-w-full mx-auto bg-lala w-[1635px] h-[1022px]">
       <div className="fixed right-0 w-[500px] md:w-[800px] lg:w-[1200px]">
